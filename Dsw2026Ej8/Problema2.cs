@@ -10,20 +10,17 @@ namespace Dsw2026Ej8
 
         public string CrearResumenVenta(long productCode, string productDescription, int quantity, decimal unitPrice) {
 
-            decimal total = quantity * unitPrice;
+            decimal total = quantity > 0 ? quantity * unitPrice : 0;
 
+            var venta = new
+            {
+                Code = productCode,
+                Description = productDescription,
+                Quantity = quantity,
+                Total = total
+            };
 
-            if (quantity <= 0) {
-
-                total = 0;
-
-            }
-
-            var anon = new(productCode, productDescription, quantity, unitPrice);
-
-
-
-            return null
+            return $"{venta.Code}-{venta.Description}-{venta.Total}";
         }
 
 
