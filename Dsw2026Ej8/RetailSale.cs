@@ -9,9 +9,5 @@ namespace Dsw2026Ej8
         public RetailSale(decimal importe) : base(importe)
         {
         }
-        public override decimal CalculateTotal()
-        {
-            return base.CalculateTotal();
-        }
     }
 }
