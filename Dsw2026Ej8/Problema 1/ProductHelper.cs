@@ -8,11 +8,10 @@ namespace Dsw2026Ej8
     {
          public string ObtenerEtiquetaProducto(long code, string description, decimal price)
         {
-            description = ValidarDescripcion(description);
             string precioFormateado = FormatearPrecio(price);
             return $"[{code}] {description} {precioFormateado}";
         }
     }
 
-    }
+ 
 }
